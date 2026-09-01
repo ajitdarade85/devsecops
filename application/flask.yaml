@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: flask-app
-          image: circleci/hello-flask-nginx:latest
+          image: ajitdarade85/my-app:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 5000
@@ -35,7 +35,6 @@ spec:
             - /bin/sh
             - -c
             - |
-              pip install --no-cache-dir -r requirements.txt &&
               flask run --host 0.0.0.0 --port 5000
       volumes:
         - name: app-code
